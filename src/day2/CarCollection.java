@@ -9,6 +9,8 @@ public class CarCollection extends ArrayList<Car> {
 
 
     public CarCollection(int capacity) {
+        if (capacity <= 0)
+            throw new IllegalArgumentException();
         this.capacity = capacity;
         this.parkingLotListeners = new ArrayList<ParkingLotListener>();
         updateStatus();

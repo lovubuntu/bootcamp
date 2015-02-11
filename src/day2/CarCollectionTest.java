@@ -4,11 +4,20 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.*;
 
 public class CarCollectionTest {
 
     private CarCollection carCollection;
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldNotAllowUserToCreateLotWithZeroCapacity() {
+        carCollection = new CarCollection(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldNotAllowUserToCreateLotWithNegativeCapacity() {
+        carCollection = new CarCollection(-10);
+    }
 
     @Test
     public void shouldTestCollectionFull() {
