@@ -8,7 +8,6 @@ public class ParkingLot {
     private CarCollection parkedCars;
     private ArrayList<ParkingLotListener> parkingLotListeners;
     private HashMap<CarCollection.Status, ArrayList<ParkingLotListener>> listeners;
-    private int cost;
 
     public ParkingLot(int capacity, ParkingClass parkingClass) {
         this.parkedCars = new CarCollection(capacity);
@@ -64,6 +63,10 @@ public class ParkingLot {
     }
 
     public int getCost() {
-        return cost;
+        return parkingClass.getCost();
+    }
+
+    public int getAvailableParkingSpace() {
+        return parkedCars.getFreeSpace();
     }
 }

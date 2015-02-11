@@ -19,6 +19,6 @@ public class ParkingComplexTest {
         ParkingLot parkingLot = new ParkingLot(10, ParkingClass.DELUXE);
         parkingComplex.addParkingLot(parkingLot);
         ParkingComplex.Attendee attendee = new ParkingComplex.Attendee();
-        parkingComplex.addParkingLotToAttendee(parkingLot, attendee);
+//        parkingComplex.addParkingLotToAttendee(parkingLot, attendee);
     }
 }

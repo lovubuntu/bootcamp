@@ -76,11 +76,8 @@ public class ParkingLotTest {
 
     @Test
     public void shouldNotifyLotOwnerFillingStatus() {
-//        parkingLot.register(ALMOSTFULL, new AlmostFullNotifier(new ParkingLotOwner()))
-//        parkingLot.register(ALMOSTFULL, new AlmostFullNotifier(new Security()))
         parkingLot = new ParkingLot(5, ParkingClass.DELUXE);
         ParkingLotListener fullListener = mock(ParkingLotListener.class);
-//        parkingLot.register(Status.FULL, new FullNotifier(fullListener));
 
         parkingLot.allot(new Car());
         parkingLot.allot(new Car());
@@ -89,6 +86,14 @@ public class ParkingLotTest {
         parkingLot.allot(new Car());
 
         verify(fullListener, times(1)).notifyStateChange();
+    }
+
+    @Test
+    public void shouldReturnTheNumberOfSlotsEmpty() {
+        parkingLot = new ParkingLot(5, ParkingClass.DELUXE);
+        parkingLot.allot(new Car());
+
+        assertEquals(4, parkingLot.getAvailableParkingSpace());
     }
 
 }

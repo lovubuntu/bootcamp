@@ -1,8 +1,4 @@
 package day2;
-
-/**
- * Created by Prabhu on 2/10/15.
- */
 public enum ParkingClass {
     PREMIUM(100), DELUXE(50), STANDARD(20);
     private int cost;

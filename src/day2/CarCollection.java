@@ -55,6 +55,10 @@ public class CarCollection extends ArrayList<Car> {
         return isStatusChanged;
     }
 
+    public int getFreeSpace() {
+        return capacity - this.size();
+    }
+
     enum Status {
         FULL, LIMITED_AVAILABILITY, AVAILABLE;
     }
